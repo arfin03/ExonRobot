@@ -22,7 +22,7 @@ class Config(object):
         "mongodb+srv://public:abishnoimf@cluster0.rqk6ihd.mongodb.net/?retryWrites=true&w=majority",
     )
     DB_NAME = getenv("DB_NAME", "ExonRobot")
-    REDIS_URL = "redis://default:wK6ZCiclq4iQKYpgfY90v6kd6WdPfEwl@redis-10186.c263.us-east-1-2.ec2.cloud.redislabs.com:10186/default"
+    REDIS_URL = "redis://default:imrnQliHthSq3OqyVWoKADIGQNO9u9pf@redis-12324.c325.us-east-1-4.ec2.redns.redis-cloud.com:12324/default"
     DATABASE_URL = getenv("DATABASE_URL", None)
 
     # ɴᴏ ᴇᴅɪᴛ ᴢᴏɴᴇ
@@ -36,3 +36,10 @@ class Production(Config):
 
 class Development(Config):
     LOGGER = True
+
+import redis
+
+r = redis.Redis(
+  host='',
+  port=12324,
+  password='')
